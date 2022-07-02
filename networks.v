@@ -18,7 +18,7 @@ pub fn (mut d DockerConn) network_connect(id string, net_id string) ? {
 	n := NetworkConnectOptions{
 		container: id
 	}
-	d.send_request_with_json(Method.POST, '/networks/$net_id/connect', n)?
+	d.send_request_with_json(Method.post, '/networks/$net_id/connect', n)?
 
 	head, body := d.read_response()?
 
